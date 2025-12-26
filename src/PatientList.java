@@ -57,10 +57,10 @@ public class PatientList {
         }
         Node current = head;
         while (current != null) {
-            System.out.println("ID: " + current.data.id);
-            System.out.println("Name: " + current.data.name);
-            System.out.println("Age: " + current.data.age);
-            System.out.println("Severity: " + current.data.severity);
+            System.out.println("ID: " + current.data.id + " " +
+                     "Name: " + current.data.name +  " "+
+                     "Age: " + current.data.age + " " +
+                    "Severity: " + current.data.severity);
             current = current.next;
 
         }

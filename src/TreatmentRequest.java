@@ -15,7 +15,6 @@ public class TreatmentRequest {
     public TreatmentRequest(int patientId, boolean priority) {
         this.patientId = patientId;
         this.priority = priority;
-        this.severity = 0;
         this.arrivalTime = System.currentTimeMillis();
     }
 }

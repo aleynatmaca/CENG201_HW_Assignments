@@ -4,6 +4,7 @@ import java.util.Queue;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        System.out.println("------ TASK 1------");
         PatientList patientList = new PatientList();
         Patient p1 = new Patient(101, "ALİ", 5, 65);
         Patient p2 = new Patient(102, "AYŞE", 8, 15);
@@ -45,8 +46,6 @@ public class Main {
         queue.enqueue(new TreatmentRequest(106));
         queue.enqueue(new TreatmentRequest(107));
         queue.enqueue(new TreatmentRequest(108));
-        queue.enqueue(new TreatmentRequest(109));
-        queue.enqueue(new TreatmentRequest(110));
 
 
         queue.printQueue();
@@ -58,23 +57,21 @@ public class Main {
         System.out.println("Size is: " + queue.size());
         queue.dequeue();
         System.out.println("Size is: " + queue.size());
-        queue.printQueue();
         queue.dequeue();
+        System.out.println("Size is: " + queue.size());
         queue.printQueue();
 
         System.out.println("-------");
+        System.out.println("------TASK 3------");
+
         DischargeStack dischargeStack = new DischargeStack();
-        dischargeStack.push(new DischargeRecord(110));
-        dischargeStack.push(new DischargeRecord(109));
-        dischargeStack.push(new DischargeRecord(108));
-        dischargeStack.push(new DischargeRecord(107));
-        dischargeStack.push(new DischargeRecord(106));
-        dischargeStack.push(new DischargeRecord(105));
-        dischargeStack.push(new DischargeRecord(104));
-        dischargeStack.push(new DischargeRecord(103));
-        dischargeStack.push(new DischargeRecord(102));
+
         dischargeStack.push(new DischargeRecord(101));
-        System.out.println("103 ID PERSON IS ADDING NOW");
+        dischargeStack.push(new DischargeRecord(102));
+        dischargeStack.push(new DischargeRecord(103));
+        dischargeStack.push(new DischargeRecord(104));
+        dischargeStack.push(new DischargeRecord(105));
+
         dischargeStack.printStack();
         System.out.println("-------");
         dischargeStack.pop();
@@ -82,7 +79,7 @@ public class Main {
         dischargeStack.printStack();
 
         System.out.println("-------");
-        dischargeStack.peek();
+        System.out.println("-------TASK 4------");
 
                 HospitalSystem hs = new HospitalSystem();
 
@@ -114,19 +111,17 @@ public class Main {
                 hs.addDischargeRecord(new DischargeRecord(109));
                 hs.addDischargeRecord(new DischargeRecord(110));
 
-
-                hs.processTreatmentRequest();
-                hs.processTreatmentRequest();
-                hs.processTreatmentRequest();
-                hs.processTreatmentRequest();
-
                 hs.printSystemState();
 
+                hs.processTreatmentRequest();
+                hs.processTreatmentRequest();
+                hs.processTreatmentRequest();
+                hs.processTreatmentRequest();
 
-        hs.processTreatmentRequest();
-        hs.processTreatmentRequest();
-        hs.processTreatmentRequest();
-        hs.processTreatmentRequest();
+                hs.sortBySeverity();
+
+
+
 
     }
 

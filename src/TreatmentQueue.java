@@ -1,5 +1,4 @@
 import java.util.Date;
-import java.util.ArrayList;
 public class TreatmentQueue {
     private int size =0;
     TreatmentNode front;
@@ -24,56 +23,24 @@ public class TreatmentQueue {
 
     }
 
-    public void dequeue() {
+    public TreatmentRequest dequeue() {
         if(front==null){
             System.out.println("Queue is empty");
-            return;
+            return null;
 
         }
         TreatmentRequest remove = front.data;
-        System.out.println("Patient is deleted: " + "ID: " + remove.patientId);
+        //System.out.println("Patient is deleted: " + "ID: " + remove.patientId);
         front = front.next;
         if (front==null){
             rear=null;
         }
         size--;
-        return;
+        return remove;
 
-    }
-    public TreatmentRequest dequeueAndReturn() {
-        if (front == null) {
-            System.out.println("Queue is empty!");
-            return null;
-        }
-
-        TreatmentRequest removed = front.data;
-        front = front.next;
-
-        if (front == null) {
-            rear = null;
-        }
-
-        size--;
-        return removed;
     }
     public boolean isEmpty() {
         return front == null;
-    }
-
-
-    public ArrayList<TreatmentRequest> drainToList() {
-        ArrayList<TreatmentRequest> list = new ArrayList<>();
-        while (!isEmpty()) {
-            TreatmentRequest r = dequeueAndReturn();
-            if (r != null) list.add(r);
-        }
-        return list;
-    }
-
-    public void loadFromList(ArrayList<TreatmentRequest> list) {
-        for (TreatmentRequest r : list) {
-            enqueue(r);
-        }
     }
 
 
@@ -88,7 +55,7 @@ public class TreatmentQueue {
             System.out.println("Queue is empty!");
             return;
         }
-        System.out.println("----CURRENT LIST----");
+        //System.out.println("----CURRENT LIST----");
 
         TreatmentNode current = front;
 
@@ -101,7 +68,4 @@ public class TreatmentQueue {
         }
 
     }
-
-
-
 }
