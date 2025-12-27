@@ -3,6 +3,7 @@ import java.util.Date;
 public class DischargeStack {
     NodeStack top;
     public DischargeStack() {
+
         top = null;
     }
     public void push(DischargeRecord record){
@@ -20,14 +21,14 @@ public class DischargeStack {
         top = top.next;
         return;
     }
-    public void peek() {
+    public void peek() { //shows the top item
         if (top == null) {
             System.out.println("Stack is empty!");
         }
         DischargeRecord record = top.data;
         System.out.println("Discharge Record: " + record.patientId);
     }
-    public void printStack() {
+    public void printStack() { //print information about discharge
 
         if (top == null) {
             System.out.println("Stack is empty!");
@@ -42,6 +43,8 @@ public class DischargeStack {
 
             current = current.next;
         }
-        }
+
     }
+
+}
 

@@ -16,7 +16,8 @@ public class HospitalSystem {
         this.normalQueue = new TreatmentQueue();
     }
 
-    public void addPatient(Patient p) {
+    public void addPatient(Patient p) { // Adds the patient to the linked list for ordered traversal
+                                        // and stores it in the HashMap for fast access by ID
         patientList.addPatient(p);
         patientMap.put(p.id, p);
     }
@@ -24,13 +25,6 @@ public class HospitalSystem {
     public void addDischargeRecord(DischargeRecord record) {
         dischargeStack.push(record);
     }
-
-//    private int getPatientSeverity(int patientId) {
-//        Patient p = patientMap.get(patientId);
-//        if (p == null) return 0;
-//        return p.severity;
-//    }
-
     public void addTreatmentRequest(TreatmentRequest req) {
         if (!patientMap.containsKey(req.patientId)) {
             System.out.println("Patient not found: " + req.patientId);
@@ -39,6 +33,11 @@ public class HospitalSystem {
         if (req.priority) priorityQueue.enqueue(req);
         else normalQueue.enqueue(req);
     }
+
+     // Two separate queues are used for priority and normal treatment requests
+    // This design ensures that immediate patients are always processed first
+    // while preserving FIFO order within each group
+    // If the priority queue is empty requests are taken from the normal queue(I create)
 
     public void processTreatmentRequest() {
         TreatmentRequest req;

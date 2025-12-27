@@ -1,7 +1,7 @@
 public class PatientList {
     Node head;
 
-    public void addPatient(Patient p) {
+    public void addPatient(Patient p) { //add a new patient
         Node newNode = new Node(p); //create the object for add patient
         if (head == null) {
             head = newNode;
@@ -50,7 +50,7 @@ public class PatientList {
 
     }
 
-    public void printList() {
+    public void printList() { //print information
         if (head == null) {
             System.out.println("List is empty");
             return;

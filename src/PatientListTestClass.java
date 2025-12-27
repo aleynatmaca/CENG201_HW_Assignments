@@ -8,6 +8,7 @@ public class PatientListTestClass {
         Patient p4 = new Patient(104, "SEMA", 6, 28);
         Patient p5 = new Patient(105, "AHMET", 7, 33);
 
+        //add 5 patient
         patientList.addPatient(p1);
         patientList.addPatient(p2);
         patientList.addPatient(p3);
@@ -30,7 +31,7 @@ public class PatientListTestClass {
             System.out.println("Not found.");
         }
         System.out.println("---------------------");
-        System.out.println("FINAL LIST:");
+        System.out.println("FINAL LIST:"); //print final list
         patientList.printList();
     }
 }
