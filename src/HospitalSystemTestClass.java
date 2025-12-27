@@ -37,7 +37,8 @@ public class HospitalSystemTestClass {
         hs.processTreatmentRequest();
         hs.processTreatmentRequest();
         hs.processTreatmentRequest();
+        System.out.println("\n");
+        hs.sortSeverity();
 
-        hs.sortBySeverity();
     }
 }

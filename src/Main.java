@@ -118,10 +118,7 @@ public class Main {
                 hs.processTreatmentRequest();
                 hs.processTreatmentRequest();
 
-                hs.sortBySeverity();
-
-
-
+                hs.sortSeverity();
 
     }
 

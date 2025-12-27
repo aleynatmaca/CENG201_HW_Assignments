@@ -30,7 +30,6 @@ public class TreatmentQueue {
 
         }
         TreatmentRequest remove = front.data;
-        //System.out.println("Patient is deleted: " + "ID: " + remove.patientId);
         front = front.next;
         if (front==null){
             rear=null;
@@ -55,7 +54,6 @@ public class TreatmentQueue {
             System.out.println("Queue is empty!");
             return;
         }
-        //System.out.println("----CURRENT LIST----");
 
         TreatmentNode current = front;
 

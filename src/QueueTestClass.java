@@ -12,16 +12,20 @@ public class QueueTestClass {
         queue.enqueue(new TreatmentRequest(108));
 
         queue.printQueue();
+        System.out.println("Size is: " + queue.size());
+        System.out.println("----Deleting now----");
 
+        queue.dequeue();
+        queue.printQueue();
+        System.out.println("Size is: " + queue.size());
         System.out.println("----Deleting now----");
         queue.dequeue();
-
-        System.out.println("Size is: " + queue.size());
-        queue.dequeue();
-        System.out.println("Size is: " + queue.size());
-        queue.dequeue();
-        System.out.println("Size is: " + queue.size());
         queue.printQueue();
+        System.out.println("Size is: " + queue.size());
+        System.out.println("----Deleting now----");
+        queue.dequeue();
+        queue.printQueue();
+        System.out.println("Size is: " + queue.size());
 
         System.out.println("-------");
     }

@@ -1,5 +1,4 @@
 import java.util.HashMap;
-
 public class HospitalSystem {
     private PatientList patientList;
     private TreatmentQueue treatmentQueue;
@@ -26,11 +25,11 @@ public class HospitalSystem {
         dischargeStack.push(record);
     }
 
-    private int getPatientSeverity(int patientId) {
-        Patient p = patientMap.get(patientId);
-        if (p == null) return 0;
-        return p.severity;
-    }
+//    private int getPatientSeverity(int patientId) {
+//        Patient p = patientMap.get(patientId);
+//        if (p == null) return 0;
+//        return p.severity;
+//    }
 
     public void addTreatmentRequest(TreatmentRequest req) {
         if (!patientMap.containsKey(req.patientId)) {
@@ -57,35 +56,36 @@ public class HospitalSystem {
         System.out.println("\n--- PATIENT LIST ---");
         patientList.printList();
 
-        System.out.println("\n--- PRIORITY QUEUE ---");
+        System.out.println("\n--- PRIORITY TREATMENT REQUESTS ---");
         priorityQueue.printQueue();
 
-        System.out.println("\n--- NORMAL QUEUE ---");
+        System.out.println("\n--- NORMAL TREATMENT REQUESTS ---");
         normalQueue.printQueue();
 
-        System.out.println("\n--- DISCHARGE STACK ---");
+        System.out.println("\n--- DISCHARGE RECORDS ---");
         dischargeStack.printStack();
 
-        System.out.println("\n--- patientMap size --- " + patientMap.size());
+        System.out.println("\n--- Patient Map Size --- " + patientMap.size());
     }
 
-    public void sortBySeverity() {
-        Node current2 = patientList.head;
 
-        while (current2 != null) {
+    public void sortSeverity() {
+        Node c = patientList.head;
+
+        while (c != null) {
             Node current = patientList.head;
             while (current != null && current.next != null) {
                 if (current.data.severity < current.next.data.severity) {
-                    Patient temp = current.data;
+                    Patient p1 = current.data;
                     current.data = current.next.data;
-                    current.next.data = temp;
+                    current.next.data = p1;
                 }
                 current = current.next;
             }
-            current2 = current2.next;
+            c = c.next;
         }
 
-        System.out.println("-----AFTER SORTING PATIENT LIST BY SEVERITY-----");
+        System.out.println("-----PATIENT LIST AFTER SORT-----");
         patientList.printList();
     }
 }
