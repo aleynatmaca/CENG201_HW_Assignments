@@ -51,15 +51,20 @@ public class Main {
         queue.printQueue();
 
 
+        System.out.println("Size is: " + queue.size());
+        System.out.println("----Deleting now----");
+
+        queue.dequeue();
+        queue.printQueue();
+        System.out.println("Size is: " + queue.size());
         System.out.println("----Deleting now----");
         queue.dequeue();
-
-        System.out.println("Size is: " + queue.size());
-        queue.dequeue();
-        System.out.println("Size is: " + queue.size());
-        queue.dequeue();
-        System.out.println("Size is: " + queue.size());
         queue.printQueue();
+        System.out.println("Size is: " + queue.size());
+        System.out.println("----Deleting now----");
+        queue.dequeue();
+        queue.printQueue();
+        System.out.println("Size is: " + queue.size());
 
         System.out.println("-------");
         System.out.println("------TASK 3------");
@@ -117,7 +122,7 @@ public class Main {
                 hs.processTreatmentRequest();
                 hs.processTreatmentRequest();
                 hs.processTreatmentRequest();
-
+                System.out.println("\n");
                 hs.sortSeverity();
 
     }
